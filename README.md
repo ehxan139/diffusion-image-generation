@@ -213,7 +213,7 @@ scaler = GradScaler()
 
 with autocast():
     loss = ddpm.train_step(x, optimizer)
-    
+
 scaler.scale(loss).backward()
 scaler.step(optimizer)
 scaler.update()
